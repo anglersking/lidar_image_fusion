@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lidar/Calib_parama_test/src/lidar_camera/build/devel/setup.sh

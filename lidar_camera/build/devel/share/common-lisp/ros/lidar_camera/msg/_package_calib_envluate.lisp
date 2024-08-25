@@ -1,0 +1,10 @@
+(cl:in-package lidar_camera-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          AVE_DEVIATION_Z-VAL
+          AVE_DEVIATION_Z
+          AVE_HORIZONTAL_REPROJECTERR-VAL
+          AVE_HORIZONTAL_REPROJECTERR
+          AVE_VERTICAL_REPROJECTERR-VAL
+          AVE_VERTICAL_REPROJECTERR
+))

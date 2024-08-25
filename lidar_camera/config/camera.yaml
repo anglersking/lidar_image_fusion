@@ -1,0 +1,58 @@
+%YAML:1.0
+---
+
+# camera_topic_FC: "/sensor/cameraF50/image_raw/compressed"
+# camera_topic_LF: "/sensor/cameraLF100/image_raw/compressed"
+# camera_topic_RF: "/sensor/cameraRF100/image_raw/compressed"
+
+# intrinsic_file_FC: "cameraF50.json"
+# intrinsic_file_LF: "cameraLF100.json"
+# intrinsic_file_RF: "cameraRF100.json"
+
+# calib file floder
+# calib_path: "/calib"
+
+# 6 cameras
+camera_topic_cameraF30: "/sensor/camera_front_far/image_raw/compressed"
+camera_topic_cameraF50: "/sensor/camera_rear_mid_down/image_raw/compressed"
+camera_topic_cameraR50: "/sensor/camera_rear_mid/image_raw/compressed"
+#camera_topic_cameraR50: "/sensor/camera_rear_mid/image_raw/compressed"
+#camera_topic_cameraR50: "/sensor/camera_rear_mid/image_raw/compressed"
+
+camera_topic_cameraF100: "/sensor/camera_front_wide/image_raw/compressed"
+camera_topic_cameraLF100: "/sensor/camera_left_front/image_raw/compressed"
+camera_topic_cameraRF100: "/sensor/camera_right_front/image_raw/compressed"
+# camera_topic_cameraR50: "/sensor/cameraR50/image_raw/compressed"
+# camera_topic_cameraLR100: "/sensor/cameraLR100/image_raw/compressed"
+# camera_topic_cameraRR100: "/sensor/cameraRR100/image_raw/compressed"
+
+intrinsic_file_cameraF30: "cameraF30.json"
+intrinsic_file_cameraF50: "cameraF50.json"
+intrinsic_file_cameraR50: "cameraR50.json"
+
+
+yaml_file_cameraF30: "calibration/camera_front_far.yaml"
+yaml_file_cameraR50: "calibration/camera_rear_mid_up.yaml"
+yaml_file_cameraF50: "calibration/camera_rear_mid_down.yaml"
+
+
+yaml_file_cameraF100: "calibration/camera_front_wide.yaml"
+yaml_file_cameraLF100: "calibration/camera_left_rear.yaml"
+yaml_file_cameraRF100: "calibration/camera_right_front.yaml"
+
+
+
+
+# intrinsic_file_cameraR50: "cameraR50.json"
+yaml_file_cameraLR100: "cameraLR100.json"
+yaml_file_cameraRR100: "cameraRR100.json"
+
+
+
+
+intrinsic_file_cameraF100: "cameraF100.json"
+intrinsic_file_cameraLF100: "cameraLF100.json"
+intrinsic_file_cameraRF100: "cameraRF100.json"
+# intrinsic_file_cameraR50: "cameraR50.json"
+intrinsic_file_cameraLR100: "cameraLR100.json"
+intrinsic_file_cameraRR100: "cameraRR100.json"

@@ -1,0 +1,77 @@
+<!-- -*- mode: XML -*- -->
+<!-- run robosense_pointcloud/CloudNodelet in a nodelet manager for an RS-RUBY -->
+
+<launch>
+
+  <!-- declare arguments with default values -->
+  <arg name="sdk_version" default="V1.10-20210716" />
+  <arg name="calibration" default="$(find robosense_pointcloud)/params/robosense-ruby128.yaml"/>
+  <arg name="frame_id" default="velodyne_center" />
+  <arg name="frame_id_base" default="car" />
+  <arg name="frame_manager" default="robosense_center" />
+  <arg name="device_ip" default="192.168.3.201" />
+  <arg name="port" default="6699" />
+  <arg name="manager" default="$(arg frame_manager)_nodelet_manager" />
+  <arg name="pcap" default="" />
+  <arg name="read_fast" default="false" />
+  <arg name="read_once" default="false" />
+  <arg name="use_tf_yaml" default="true" />
+  <arg name="repeat_delay" default="0.0" />
+  <arg name="rpm" default="600.0" />
+  <arg name="cut_angle" default="3.1415926" />
+  <arg name="starting_angle" default="180" />
+  <arg name="gps_time" default="true" />
+  <arg name="model" default="RS-RUBY"/>
+  <arg name="num_lasers" default="128" />
+  <arg name="fixed_frame_id" default="enu" />
+  <arg name="motion_compensate_offset" default="-0.05" />
+  <arg name="packet_topic" default="/sensor/lidar/multi_scan" />
+  <arg name="points_topic_transform" default="/sensor/lidar/point_cloud" />
+  <arg name="pointcloud_width" default="1875" />
+  <arg name="pointcloud_height" default="128" />
+
+
+  <!-- start params server -->
+ <!-- <include file="$(find param_server)/launch/params.launch" /> -->
+
+  <!-- start nodelet manager and driver nodelets -->
+  <include file="$(find robosense_driver)/launch/nodelet_manager.launch">
+    <arg name="device_ip" value="$(arg device_ip)"/>
+    <arg name="frame_id" value="$(arg frame_id)"/>
+    <arg name="manager" value="$(arg manager)" />
+    <arg name="model" value="$(arg model)"/>
+    <arg name="pcap" value="$(arg pcap)"/>
+    <arg name="port" value="$(arg port)"/>
+    <arg name="read_fast" value="$(arg read_fast)"/>
+    <arg name="read_once" value="$(arg read_once)"/>
+    <arg name="repeat_delay" value="$(arg repeat_delay)"/>
+    <arg name="rpm" value="$(arg rpm)"/>
+    <arg name="gps_time" value="$(arg gps_time)"/>
+    <arg name="cut_angle" value="$(arg cut_angle)" />
+    <arg name="starting_angle" value="$(arg starting_angle)" />
+    <arg name="packet_topic" value="$(arg packet_topic)" />
+    <arg name="pointcloud_width" value="$(arg pointcloud_width)" />
+    <arg name="pointcloud_height" value="$(arg pointcloud_height)" />
+  </include>
+
+  <!-- start transform nodelet -->
+  <include file="$(find robosense_pointcloud)/launch/transform_nodelet.launch">
+    <arg name="calibration" value="$(arg calibration)"/>
+    <arg name="frame_id" value="$(arg frame_id)"/>
+    <arg name="manager" value="$(arg manager)" />
+    <arg name="num_lasers" value="$(arg num_lasers)" />
+    <arg name="frame_id_base" value="$(arg frame_id_base)" />
+    <arg name="fixed_frame_id" value="$(arg fixed_frame_id)" />
+    <arg name="motion_compensate_offset" value="$(arg motion_compensate_offset)" />
+    <arg name="rpm" value="$(arg rpm)"/>
+    <arg name="packet_topic" value="$(arg packet_topic)" />
+    <arg name="starting_angle" value="$(arg starting_angle)" />
+    <arg name="pointcloud_width" value="$(arg pointcloud_width)" />
+    <arg name="pointcloud_height" value="$(arg pointcloud_height)" />
+    <arg name="points_topic_transform" value="$(arg points_topic_transform)" />
+  </include>
+
+  <node pkg="robosense_pointcloud" type="robo_static_tf_node" name="robo_static_tf_node" />
+    <param name="use_tf_yaml" value="$(arg use_tf_yaml)" />
+  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find robosense_pointcloud)/rviz/vlp128.rviz" /> -->
+</launch>

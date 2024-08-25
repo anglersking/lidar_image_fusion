@@ -1,0 +1,2 @@
+/usr/bin/ar qc devel/lib/libio.a  CMakeFiles/io.dir/src/io.cpp.o CMakeFiles/io.dir/src/evaluation.cpp.o CMakeFiles/io.dir/src/plot.cc.o
+/usr/bin/ranlib devel/lib/libio.a

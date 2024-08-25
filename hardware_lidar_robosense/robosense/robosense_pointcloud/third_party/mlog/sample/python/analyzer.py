@@ -1,0 +1,1 @@
+../../scripts/analyzer.py

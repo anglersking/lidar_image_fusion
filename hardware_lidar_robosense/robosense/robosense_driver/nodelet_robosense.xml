@@ -1,0 +1,9 @@
+<library path="lib/librobo_driver_nodelet">
+  <class name="robosense_driver/DriverNodelet"
+         type="robosense_driver::DriverNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description> 
+      Publish raw Robosense data packets.
+    </description>
+  </class>
+</library>

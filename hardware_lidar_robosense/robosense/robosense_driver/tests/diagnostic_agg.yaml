@@ -1,0 +1,17 @@
+## Diagnostic aggregator parameters for testing Robosense diagnostics.
+#
+#  $ rosparam load $(rospack find robosense_driver)/tests/diagnostic_agg.yaml
+#  $ rosrun diagnostic_aggregator aggregator_node
+#
+diagnostic_aggregator:
+  analyzers:
+    sensors:
+      type: diagnostic_aggregator/AnalyzerGroup
+      path: Sensors
+      analyzers:
+        robosense:
+          type: diagnostic_aggregator/GenericAnalyzer
+          path: Robosense
+          timeout: 5.0
+          find_and_remove_prefix: robosense_nodelet_manager
+          num_items: 1

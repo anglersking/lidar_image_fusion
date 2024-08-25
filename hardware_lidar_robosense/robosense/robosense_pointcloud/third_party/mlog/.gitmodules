@@ -1,0 +1,3 @@
+[submodule "ros/mlog_msgs"]
+	path = ros/mlog_msgs
+	url = ../../../maf/_git/maf_mlog_msgs

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <arg name="use_gps_time" default="false"/>
+    <arg name="remap_fpd" default="false"/>
+
+    <include file="$(find sensor_conversion_tools)/launch/fpd.launch">
+      <arg name="use_gps_time" value="$(arg use_gps_time)"/>
+      <arg name="remap_fpd" value="$(arg remap_fpd)"/>
+    </include> -->
+    <include file="$(find gps_imu_driver)/launch/fpd_driver.launch" />
+    <include file="$(find velodyne_pointcloud)/launch/wanshannnt-128.launch"/>
+</launch>

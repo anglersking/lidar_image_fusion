@@ -1,0 +1,5 @@
+message Logs {
+// --- Logs --- 
+std_mfrmsgs.Header header = 1; 
+Entry[] entries = 2; 
+}

@@ -1,0 +1,24 @@
+<class_libraries>
+
+  <library path="lib/librobo_cloud_nodelet">
+    <class name="robosense_pointcloud/CloudNodelet"
+           type="robosense_pointcloud::CloudNodelet"
+           base_class_type="nodelet::Nodelet">
+      <description>
+        Aggregates points from multiple packets, publishing PointCloud2.
+      </description>
+    </class>
+  </library>
+
+  <library path="lib/librobo_transform_nodelet">
+    <class name="robosense_pointcloud/TransformNodelet"
+           type="robosense_pointcloud::TransformNodelet"
+           base_class_type="nodelet::Nodelet">
+      <description>
+        Transforms packets into /enu frame, publishing multiple packets
+        as PointCloud2.
+      </description>
+    </class>
+  </library>
+
+</class_libraries>

@@ -1,0 +1,3 @@
+[submodule "robosense/robosense_pointcloud/third_party/mlog"]
+	path = robosense/robosense_pointcloud/third_party/mlog
+	url = ../../../mf/_git/mlog

@@ -1,0 +1,6 @@
+message Entry {
+// --- entry --- 
+uint8 type = 1; 
+string data = 2; 
+
+}

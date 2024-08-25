@@ -1,0 +1,32 @@
+<!-- -*- mode: XML -*- -->
+<!-- run robosense_pointcloud/ConvertNodelet in a nodelet manager -->
+
+<launch>
+  <arg name="calibration" default="" />
+  <arg name="frame_id" default="" />
+  <arg name="manager" default="robosense_nodelet_manager" />
+  <arg name="num_lasers" default="" />
+  <arg name="frame_id_base" default="" />
+  <arg name="fixed_frame_id" default="" />
+  <arg name="motion_compensate_offset" default="" />
+  <arg name="rpm" default="600.0" />
+  <arg name="starting_angle" default="180" />
+  <arg name="pointcloud_width" default="1875" />
+  <arg name="pointcloud_height" default="128" />
+  <arg name="points_topic_convert" default="/sensor/lidar/points_cloud" />
+
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)_convert" 
+        args="load robosense_pointcloud/CloudNodelet $(arg manager)" output="screen">
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="frame_id" value="$(arg frame_id)"/>
+    <param name="num_lasers" value="$(arg num_lasers)" />
+    <param name="frame_id_base" value="$(arg frame_id_base)" />
+    <param name="fixed_frame_id" value="$(arg fixed_frame_id)" />
+    <param name="motion_compensate_offset" value="$(arg motion_compensate_offset)" />
+    <param name="rpm" value="$(arg rpm)"/>
+    <param name="starting_angle" value="$(arg starting_angle)" />
+    <param name="pointcloud_width" value="$(arg pointcloud_width)" />
+    <param name="pointcloud_height" value="$(arg pointcloud_height)" />
+    <param name="points_topic_convert" value="$(arg points_topic_convert)" />
+  </node>
+</launch>
